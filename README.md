@@ -1,0 +1,2 @@
+# tbc-page
+static page
