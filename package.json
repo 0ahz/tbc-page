@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "tailwindcss": "tailwindcss -i ./src/style.css -o ./dist/style.css --watch",
+    "tailwindcss": "tailwindcss -i ./src/style.css -o ./dist/style.css --minify --watch",
     "serve": "serve .",
     "dev": "concurrently \"npm:tailwindcss\" \"npm:serve\"",
     "format": "prettier index.html src/style.css --write"
