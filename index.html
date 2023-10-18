@@ -12,15 +12,20 @@
     <link href="/dist/style.css" rel="stylesheet" />
     <script>
       (function () {
-        if (
-          localStorage.theme === 'dark' ||
-          (!('theme' in localStorage) &&
-            window.matchMedia('(prefers-color-scheme: dark)').matches)
-        ) {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
+        function toggleDarkMode(isDark) {
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
         }
+        const darkModePreference = window.matchMedia(
+          '(prefers-color-scheme: dark)',
+        );
+        toggleDarkMode(darkModePreference.matches);
+        darkModePreference.addEventListener('change', e => {
+          toggleDarkMode(e.matches);
+        });
       })();
     </script>
     <title>Welcome ~</title>
