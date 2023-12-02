@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  -webkit-text-size-adjust: 100% !important;
+html,
+body {
+  text-size-adjust: 100% !important;
 }
